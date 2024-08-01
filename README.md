@@ -8,14 +8,14 @@ Passo a Passo
 Foi importado o arquivo Financial Sample.xlsx que contém a tabela financials que foi usada para a construção das tabelas dimensão e tabela fato que para diferenciação foram usadas as letras D e F no seu nome.
 A tabela financials também teve seu nome modificado para financials - original para que fossem duplicados outras tabelas a partir dela e não houvesse confusão no uso das tabelas.
 
-- Tabelas criadas - 
+- Tabelas criadas -  | 
 D_Produtos | 
 D_Descontos | 
 F_Vendas | 
 D_Produtos_Detalhes | 
 D_Detalhes
 
-- Colunas da tabela financials-original - 
+- Colunas da tabela financials-original -  | 
 Segment | 
 Country | 
 Product | 
