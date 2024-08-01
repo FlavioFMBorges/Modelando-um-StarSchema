@@ -13,7 +13,7 @@ D_Produtos |
 D_Descontos | 
 F_Vendas | 
 D_Produtos_Detalhes | 
-D_Detalhes
+D_Detalhes | 
 
 - Colunas da tabela financials-original -  | 
 Segment | 
@@ -32,10 +32,14 @@ Profit |
 Date | 
 Month Number | 
 Month Name | 
-Year
+Year | 
 
-Depois de duplicada a tabela original, foram agrupadas as colunas e realizadas uma operação por nova coluna expressando nos seus nomes o significado das operações e, logo após, foram criados os ids dos produtos através da coluna condicional e excluído as colunas que não iriam ser usadas.
+Depois de duplicada a tabela original, foram agrupadas as colunas e realizadas uma operação por nova coluna expressando nos seus nomes o significado das operações e, logo após, foram criados os ids dos produtos através da coluna condicional ou índices e excluído as colunas que não iriam ser usadas.
 
-Na coluna Detalhes de produto foi deletado as colunas que não eram necessárias e com a coluna produto foi mesclado com a tabela D_
+![Tabelas Agrupadas](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/agrupamento.png)
 
-Em F_Vendas foram excluídas as colunas "Manufacturing Price", "COGS", "Month Number" por não serem necessárias a esta tabela, acrescentando uma coluna de id_produto e uma sk_id (Surrogate Key)
+Na tabela F_Vendas foram excluídas as colunas "Manufacturing Price", "COGS", "Month Number" por não serem necessárias a esta tabela, acrescentando uma coluna de id_produto e uma sk_id (Surrogate Key).
+No editor de modelos do Power Bi foram excluídas as dependencias automáticas e criado as que gerariam o modelo estrela.
+
+Faltou falar do calendário com DAX
+
