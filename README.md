@@ -43,3 +43,17 @@ No editor de modelos do Power Bi foram excluídas as dependencias automáticas e
 
 Faltou falar do calendário com DAX
 
+
+- Foi calculada a porcentagem de lucro de USA em relação ao lucro total
+
+1 - Profit (que já temos)
+  
+2 - Lucro de USA usando função DAX CALCULATE que permite filtrar os dados com uma condição, e neste caso é filtrar o lucro do país "United States of America"  
+![Lucro de USA](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/lucro_USA.png)
+
+3 - Para descobrir a porcentagem foi usada a função DIVIDE, em que dividimos o lucro de USA pelo lucro Total  
+![Porcentagem USA](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/porcentagem_lucro_USA.png)
+
+4 - Tranformamos a medida criada em porcentagem  
+![Medida em Porcentagem](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/medida%20em%20porcentagem.png)
+
