@@ -34,17 +34,30 @@ Month Number |
 Month Name | 
 Year | 
 
+
 Depois de duplicada a tabela original, foram agrupadas as colunas e realizadas uma operação por nova coluna expressando nos seus nomes o significado das operações e, logo após, foram criados os ids dos produtos através da coluna condicional ou índices e excluído as colunas que não iriam ser usadas.
 
 ![Tabelas Agrupadas](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/agrupamento.png)
 
 Na tabela F_Vendas foram excluídas as colunas "Manufacturing Price", "COGS", "Month Number" por não serem necessárias a esta tabela, acrescentando uma coluna de id_produto e uma sk_id (Surrogate Key).
-No editor de modelos do Power Bi foram excluídas as dependencias automáticas e criado as que gerariam o modelo estrela.
+No editor de modelos do Power Bi foram excluídas as dependencias automáticas e criado as que gerariam o modelo estrela.  
 
-Faltou falar do calendário com DAX
+Foi criado um calendário com função DAX:  
+![Calendário criado com funções DAX](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/calendario_DAX.png)
 
+Primeiro foi criado uma nova tabela e a função CALENDARAUTO  
+```Calendario = CALENDARAUTO(12)```
 
-- Foi calculada a porcentagem de lucro de USA em relação ao lucro total
+Posteriormente foi inserido as demais funções como medida DAX:  
+```Day of the week = WEEKDAY('Calendario'[Date])```  
+```Day of the week 2 = FORMAT('Calendario'[Date], "DDDD")```  
+```Month Number = MONTH('Calendario'[Date])```  
+```Week Number = WEEKNUM('Calendario'[Date])```  
+```Year = YEAR('Calendario'[Date])```  
+
+![CALENDARAUTO](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/calendarauto.png)
+
+- Foi calculada a porcentagem de lucro de USA em relação ao lucro total na tabela D_Detalhes:
 
 1 - Profit (que já temos)
   
@@ -55,5 +68,10 @@ Faltou falar do calendário com DAX
 ![Porcentagem USA](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/porcentagem_lucro_USA.png)
 
 4 - Tranformamos a medida criada em porcentagem  
-![Medida em Porcentagem](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/medida%20em%20porcentagem.png)
+![Medida em Porcentagem](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/medida%20em%20porcentagem.png)  
+
+Por ultimo no editor de modelos do Power Bi, a tabela Financials_original foi colocada no modo oculto, para que não interferisse na vizualização das outras tabelas criadas.  
+![Modo Oculto tabela financials](https://github.com/FlavioFMBorges/Modelando-um-StarSchema/blob/main/modooculto.png)
+
+
 
